@@ -1,0 +1,8 @@
+<!-- books/templates/books/book_form.html -->
+<h1>{{ form.instance.id|yesno:"Update,Create" }} Book</h1>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Save</button>
+</form>
+<a href="{% url 'book_list' %}">Back to Book List</a>
